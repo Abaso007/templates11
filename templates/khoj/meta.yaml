@@ -40,7 +40,7 @@ schema:
     databaseImage:
       type: string
       title: Database Image
-      default: docker.io/pgvector/pgvector:pg15
+      default: pgvector/pgvector:0.8.1-pg15
     sandboxImage:
       type: string
       title: Sandbox Image
