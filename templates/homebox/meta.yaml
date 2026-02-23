@@ -1,10 +1,14 @@
 name: Homebox
-description: Homebox is an inventory management system that helps you keep track of your belongings, their location, and other details to simplify home organization.
+description:
+  Homebox is an inventory management system that helps you keep track of your
+  belongings, their location, and other details to simplify home organization.
 instructions: null
 changeLog:
   - date: 2025-04-14
     description: First Release
 links:
+  - label: Website
+    url: https://homebox.software/en/
   - label: GitHub
     url: https://github.com/hay-kot/homebox
   - label: Documentation
