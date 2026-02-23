@@ -12,7 +12,8 @@ description:
   tools, providing full control over your data and workflows. Whether you're
   managing software development sprints, marketing campaigns, or personal todo
   lists, 4ga Boards provides the flexibility and features you need.
-instructions: null
+instructions:
+  Default credentials are demo/demo. Change the password after first login.
 changeLog:
   - date: 2025-10-23
     description: Initial Template Release
@@ -21,8 +22,10 @@ changeLog:
 links:
   - label: Website
     url: https://4gaboards.com/#home
+  - label: Documentation
+    url: https://docs.4gaboards.com
   - label: GitHub
-    url: https://github.com/rargames/4ga-boards
+    url: https://github.com/RARgames/4gaboards
 contributors:
   - name: Ahson Shaikh
     url: https://github.com/Ahson-Shaikh
