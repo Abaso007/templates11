@@ -6,7 +6,10 @@ description:
   PostgreSQL, MySQL, MariaDB, SQLite, Oracle, SQL Server, and many others.
   Perfect for teams who need collaborative database management without
   installing desktop software.
-instructions: null
+instructions:
+  On first launch, a setup wizard will guide you to create an administrator
+  account and configure the server. After completing the wizard, log in with the
+  credentials you created.
 changeLog:
   - date: 2025-07-11
     description: Initial release
