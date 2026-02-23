@@ -20,6 +20,8 @@ changeLog:
 links:
   - label: Website
     url: https://poznote.com
+  - label: Documentation
+    url: https://github.com/timothepoznanski/poznote?tab=readme-ov-file#table-of-content
   - label: Github
     url: https://github.com/TimothePoznanski/poznote
 
