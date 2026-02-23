@@ -4,13 +4,16 @@ description:
   upload, organize, and share files securely. It provides a clean web interface
   for file management with features like user authentication, file uploads,
   metadata management, and configurable upload limits.
-instructions: null
+instructions:
+  On first launch, you will be guided to create the initial admin user.
 changeLog:
   - date: 2025-09-22
     description: First release
 links:
   - label: Website
     url: https://filerise.net
+  - label: Documentation
+    url: https://filerise.net/docs/
   - label: Github
     url: https://github.com/error311/filerise
 contributors:
