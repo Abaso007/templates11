@@ -1,11 +1,12 @@
-import { Output, Services } from "~templates-utils";
+import { Output, randomPassword, Services } from "~templates-utils";
 import { Input } from "./meta";
 
 export function generate(input: Input): Output {
   const services: Services = [];
+  const password = input.password || randomPassword();
 
   const envVars = [
-    `DFLY_requirepass=${input.password}`,
+    `DFLY_requirepass=${password}`,
     `DFLY_dir=/data`,
     `DFLY_dbfilename=dump-{timestamp}`,
     `DFLY_snapshot_cron=${input.snapshotCron || "*/5 * * * *"}`,

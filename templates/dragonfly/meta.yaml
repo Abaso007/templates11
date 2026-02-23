@@ -26,7 +26,7 @@ links:
   - label: Documentation
     url: https://www.dragonflydb.io/docs
   - label: Docker Hub
-    url: https://hub.docker.com/r/docker/dragonflydb/dragonfly
+    url: https://hub.docker.com/r/dragonflydb/dragonfly
   - label: Github
     url: https://github.com/dragonflydb/dragonfly
 
