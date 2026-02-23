@@ -45,7 +45,7 @@ schema:
     databaseServiceImage:
       type: string
       title: Database Image Service
-      default: pgautoupgrade/pgautoupgrade:17-bookworm
+      default: pgautoupgrade/pgautoupgrade:18.2-trixie
 benefits:
   - title: Empower non-technical teams
     description:
