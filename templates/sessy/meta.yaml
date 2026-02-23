@@ -22,6 +22,8 @@ changeLog:
     description: Template Release
 
 links:
+  - label: Website
+    url: https://sessy.do
   - label: GitHub
     url: https://github.com/marckohlbrugge/sessy
   - label: Docker Hub
