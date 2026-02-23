@@ -7,6 +7,7 @@ export function generate(input: Input): Output {
   const services: Services = [];
   const databasePassword = randomPassword();
   const djangoSecretKey = randomPassword();
+  const adminPassword = input.adminPassword || randomPassword();
 
   services.push({
     type: "app",
@@ -31,18 +32,18 @@ export function generate(input: Input): Output {
         `KHOJ_DJANGO_SECRET_KEY=${djangoSecretKey}`,
         `KHOJ_DEBUG=False`,
         `KHOJ_ADMIN_EMAIL=${input.adminEmail}`,
-        `KHOJ_ADMIN_PASSWORD=${input.adminPassword}`,
+        `KHOJ_ADMIN_PASSWORD=${adminPassword}`,
         `KHOJ_DOMAIN=$(PRIMARY_DOMAIN)`,
         `KHOJ_TERRARIUM_URL=http://$(PROJECT_NAME)-${input.appServiceName}-sandbox:8080`,
         `KHOJ_SEARXNG_URL=http://$(PROJECT_NAME)-${input.appServiceName}-searxng:8080`,
-        `#OPENAI_API_KEY=`,
-        `#GEMINI_API_KEY=`,
-        `#ANTHROPIC_API_KEY=`,
-        `#OPENAI_BASE_URL=`,
-        `#JINA_API_KEY=`,
-        `#SERPER_DEV_API_KEY=`,
-        `#FIRECRAWL_API_KEY=`,
-        `#OLOSTEP_API_KEY=`,
+        `OPENAI_API_KEY=${input.openaiApiKey || ""}`,
+        `GEMINI_API_KEY=${input.geminiApiKey || ""}`,
+        `ANTHROPIC_API_KEY=${input.anthropicApiKey || ""}`,
+        `OPENAI_BASE_URL=${input.openaiBaseUrl || ""}`,
+        `JINA_API_KEY=${input.jinaApiKey || ""}`,
+        `SERPER_DEV_API_KEY=${input.serperDevApiKey || ""}`,
+        `FIRECRAWL_API_KEY=${input.firecrawlApiKey || ""}`,
+        `OLOSTEP_API_KEY=${input.olostepApiKey || ""}`,
       ].join("\n"),
       mounts: [
         {
@@ -82,7 +83,7 @@ export function generate(input: Input): Output {
       serviceName: `${input.appServiceName}-sandbox`,
       source: {
         type: "image",
-        image: "ghcr.io/khoj-ai/terrarium:latest",
+        image: input.sandboxImage,
       },
       env: [`DEBUG=False`].join("\n"),
       mounts: [
@@ -101,7 +102,7 @@ export function generate(input: Input): Output {
       serviceName: `${input.appServiceName}-searxng`,
       source: {
         type: "image",
-        image: "searxng/searxng:2025.4.12-391bb1268",
+        image: input.searxngImage,
       },
       env: [`INSTANCE_NAME=Khoj SearxNG`].join("\n"),
       mounts: [
