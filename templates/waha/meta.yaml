@@ -7,7 +7,12 @@ description:
   through HTTP API. The core version is completely free with no limits on
   messages or time, making it perfect for WhatsApp automation, chatbots, and
   integrations.
-instructions: null
+instructions: |
+  After deployment, access the WAHA dashboard at your service domain. The
+  default username is "admin" and the password is auto-generated — check
+  the WAHA_DASHBOARD_PASSWORD environment variable in the service settings.
+  The same credentials are used for the Swagger API docs. The WAHA_API_KEY
+  is also auto-generated and required for API authentication.
 changeLog:
   - date: 2025-06-04
     description: First Release
@@ -26,6 +31,8 @@ schema:
   required:
     - appServiceName
     - appServiceImage
+    - dashboardUsername
+    - swaggerUsername
   properties:
     appServiceName:
       type: string
@@ -34,7 +41,15 @@ schema:
     appServiceImage:
       type: string
       title: App Service Image
-      default: devlikeapro/waha:latest-2025.5.6
+      default: devlikeapro/waha:latest-2026.2.2
+    dashboardUsername:
+      type: string
+      title: Dashboard Username
+      default: admin
+    swaggerUsername:
+      type: string
+      title: Swagger Username
+      default: admin
 benefits:
   - title: Self-hosted WhatsApp API
     description:
