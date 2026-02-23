@@ -1,12 +1,20 @@
 name: MotorAdmin
-description: MotorAdmin is a modern, open-source database administration tool that provides a user-friendly interface for managing and interacting with your databases. It offers features for data visualization, query building, and database management.
+description:
+  MotorAdmin is a modern, open-source database administration tool that provides
+  a user-friendly interface for managing and interacting with your databases. It
+  offers features for data visualization, query building, and database
+  management.
 instructions: null
 changeLog:
   - date: 2025-04-16
     description: First Release
 links:
+  - label: Website
+    url: https://www.getmotoradmin.com
   - label: Github
     url: https://github.com/motor-admin/motor-admin
+  - label: Documentation
+    url: https://docs.getmotoradmin.com/guide/
 contributors:
   - name: Ahson Shaikh
     url: https://github.com/Ahson-Shaikh
@@ -26,7 +34,8 @@ schema:
       default: motoradmin/motoradmin:0.4.21
 benefits:
   - title: Database Management
-    description: User-friendly interface for managing and interacting with databases.
+    description:
+      User-friendly interface for managing and interacting with databases.
   - title: Data Visualization
     description: Visualize and analyze your data with intuitive tools.
   - title: Query Building
@@ -51,4 +60,4 @@ tags:
   - Administration
   - Data Management
   - Visualization
-  - Query Builder 
+  - Query Builder

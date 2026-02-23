@@ -1,10 +1,15 @@
-import { Output, Services, randomPassword } from "~templates-utils";
+import {
+  Output,
+  Services,
+  randomPassword,
+  randomString,
+} from "~templates-utils";
 import { Input } from "./meta";
 
 export function generate(input: Input): Output {
   const services: Services = [];
   const dbPassword = randomPassword();
-  const secretKey = randomPassword();
+  const secretKey = randomString(64);
 
   services.push({
     type: "app",
@@ -22,7 +27,7 @@ export function generate(input: Input): Output {
       ],
       env: [
         `SECRET_KEY_BASE=${secretKey}`,
-        `DATABASE_URL=postgresql://postgres:${dbPassword}@$(PROJECT_NAME)_${input.appServiceName}-db:5432/$(PROJECT_NAME)`,
+        `DATABASE_URL=postgresql://postgres:${dbPassword}@$(PROJECT_NAME)-${input.appServiceName}-db:5432/$(PROJECT_NAME)`,
       ].join("\n"),
       mounts: [
         {
@@ -43,4 +48,4 @@ export function generate(input: Input): Output {
   });
 
   return { services };
-} 
+}
