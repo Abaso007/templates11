@@ -17,6 +17,12 @@ instructions: null
 changeLog:
   - date: 2025-10-07
     description: First Release
+  - date: 2024-10-11
+    description: Version jumped to 0.15.4
+  - date: 2025-02-25
+    description: Version bumped to 0.15.10
+  - date: 2025-12-25
+    description: Version bumped to 0.16.0
 links:
   - label: GitHub
     url: https://github.com/homarr-labs/homarr
@@ -41,8 +47,8 @@ schema:
     appServiceImage:
       type: string
       title: App Service Image
-      default: ghcr.io/homarr-labs/homarr:v1.40.0
-    timezone:
+      default: ghcr.io/ajnart/homarr:0.16.0
+    serviceTimezone:
       type: string
       title: Timezone
       description: Timezone for the application
