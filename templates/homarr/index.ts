@@ -16,29 +16,21 @@ export function generate(input: Input): Output {
       domains: [
         {
           host: "$(EASYPANEL_DOMAIN)",
-          port: 7575,
+          port: 7574,
         },
       ],
       mounts: [
         {
           type: "volume",
-          name: "homarr-configs",
-          mountPath: "/app/data/configs",
-        },
-        {
-          type: "volume",
-          name: "homarr-icons",
-          mountPath: "/app/public/icons",
-        },
-        {
-          type: "volume",
-          name: "homarr-data",
-          mountPath: "/data",
+          name: "app-data",
+          mountPath: "/appdata",
         },
       ],
-      env: [`SECRET_ENCRYPTION_KEY=${secretKey}`, `TZ=${input.timezone}`].join(
-        "\n"
-      ),
+      env: [
+        `SECRET_ENCRYPTION_KEY=${secretKey}`,
+        `TZ=${input.timezone}`,
+        `PORT=7574`,
+      ].join("\n"),
     },
   });
 
