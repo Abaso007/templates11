@@ -9,7 +9,9 @@ description:
   replication, and CORS configuration. Licensed under the permissive Apache 2.0
   license, it is designed for data lakes, AI workloads, and large-scale storage
   with a user-friendly deployment experience.
-instructions: null
+instructions:
+  Login to the web console using the Access Key and Secret Key configured during
+  setup. The console is available on the default domain.
 changeLog:
   - date: 2026-02-19
     description: Template Release
@@ -45,8 +47,10 @@ schema:
     secretKey:
       type: string
       title: Secret Key
-      default: rustfsadmin
-      description: Root secret key for the S3 API and console login.
+      default: ""
+      description:
+        Root secret key for the S3 API and console login. Leave blank to
+        generate a random one.
 benefits:
   - title: Blazing Fast Performance
     description:
