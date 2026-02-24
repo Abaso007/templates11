@@ -1,8 +1,10 @@
-import { Output, Services } from "~templates-utils";
+import { Output, randomPassword, Services } from "~templates-utils";
 import { Input } from "./meta";
 
 export function generate(input: Input): Output {
   const services: Services = [];
+
+  const secretKey = input.secretKey || randomPassword();
 
   services.push({
     type: "app",
@@ -26,7 +28,7 @@ export function generate(input: Input): Output {
         `RUSTFS_CORS_ALLOWED_ORIGINS=*`,
         `RUSTFS_CONSOLE_CORS_ALLOWED_ORIGINS=*`,
         `RUSTFS_ACCESS_KEY=${input.accessKey}`,
-        `RUSTFS_SECRET_KEY=${input.secretKey}`,
+        `RUSTFS_SECRET_KEY=${secretKey}`,
         `RUSTFS_OBS_LOGGER_LEVEL=info`,
         `RUSTFS_OBJECT_CACHE_ENABLE=true`,
         `RUSTFS_OBJECT_CACHE_TTL_SECS=300`,
