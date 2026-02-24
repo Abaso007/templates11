@@ -7,11 +7,13 @@ description:
   upload, organize, and share files with customizable download links. Pwndrop
   offers features like file tracking, download notifications, and an admin
   portal protected by a secret path for enhanced security.
-instructions: null
+instructions: After deployment, user will be redirected to create an account.
 changeLog:
   - date: 2025-10-21
     description: Initial Template Release (v1.0.1)
 links:
+  - label: Website
+    url: https://breakdev.org/pwndrop/
   - label: GitHub
     url: https://github.com/kgretzky/pwndrop
   - label: Documentation
@@ -24,7 +26,6 @@ schema:
   required:
     - appServiceName
     - appServiceImage
-    - secretPath
   properties:
     appServiceName:
       type: string
@@ -35,13 +36,6 @@ schema:
       title: App Service Image
       default: lscr.io/linuxserver/pwndrop:1.0.1
       description: Pwndrop Docker image from LinuxServer.io
-    secretPath:
-      type: string
-      title: Secret Admin Path
-      default: /pwndrop
-      description:
-        Subfolder path where the admin portal can be accessed (e.g.,
-        /mysecretpath)
 benefits:
   - title: Self-Deployable File Hosting
     description:

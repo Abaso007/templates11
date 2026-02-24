@@ -12,17 +12,11 @@ export function generate(input: Input): Output {
         type: "image",
         image: input.appServiceImage,
       },
-      env: [
-        `PUID=0`,
-        `PGID=0`,
-        `TZ=Etc/UTC`,
-        `SECRET_PATH=${input.secretPath}`,
-      ].join("\n"),
+      env: [`PUID=0`, `PGID=0`, `TZ=Etc/UTC`].join("\n"),
       domains: [
         {
           host: "$(EASYPANEL_DOMAIN)",
           port: 8080,
-          path: `/${input.secretPath}`,
         },
       ],
       mounts: [
