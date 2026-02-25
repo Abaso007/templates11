@@ -1095,6 +1095,18 @@
     ]
   },
   {
+    "slug": "corsfix",
+    "logo": "logo.svg",
+    "name": "Corsfix",
+    "description": "Corsfix is a CORS proxy that eliminates cross-origin errors and lets you fetch any data for your website with zero hassle. It acts as an intermediary between your applications and target servers, automatically adding the necessary CORS headers to responses. Corsfix handles your requests securely while keeping API keys and credentials safe.",
+    "tags": [
+      "Proxy",
+      "CORS",
+      "Networking",
+      "Developer Tools"
+    ]
+  },
+  {
     "slug": "corteza",
     "logo": "logo.png",
     "name": "Corteza",
